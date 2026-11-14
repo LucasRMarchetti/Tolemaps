@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa | Tolemaps</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="pesquisa.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="icon" href="icone_dosite.ico" type="image/png">
+</head>
+
+<body>
+    <nav id="categorias">
+        <div id="nav-logo">
+            <img id="logo-img" src="icone_dosite.ico" alt="">
+        </div>
+        <div id="nav-links">
+            <a class="nav-item active" href="pesquisa.html" data-tooltip="Pesquisa">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </a>
+            <a class="nav-item" href="mapa.html" data-tooltip="Mapa">
+                <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+            </a>
+            <a class="nav-item" href="cultura.html" data-tooltip="Cultura">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17h2v-4.5l1 .55V17c0 1.1 1.8 2 4 2s4-.9 4-2v-3.95l3-1.65V17h2V11.18L23 9 12 3zm4 12.18c-.63.47-1.86.82-4 .82-2.14 0-3.37-.35-4-.82v-2.67l4 2.2 4-2.2v2.67z"/></svg>
+            </a>
+            <a class="nav-item" href="eventos.html" data-tooltip="Eventos">
+                <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+            </a>
+                        <a class="nav-item" href="guia.html" data-tooltip="Guia Turístico">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </a>
+            <a class="nav-item" href="sobrenos.html" data-tooltip="Sobre Nós">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </a>
+            <a class="nav-item" href="referencias.html" data-tooltip="Referências">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            </a>
+        </div>
+        <div id="nav-bottom">
+            <a class="nav-item nav-bottom-item" href="cadastro.html" data-tooltip="Perfil">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </a>
+            <a class="nav-item nav-bottom-item" href="paginaIni.html" data-tooltip="Início">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <main id="conteudo" class="bai-jamjuree-regular">
+        <h1>PESQUISA</h1>
+
+        <input type="text" id="barraPesquisa" placeholder="Digite o nome de um local..." />
+
+        <div class="filtros-categorias">
+            <button class="filtro-btn ativo" data-categoria="todos">Todos</button>
+            <button class="filtro-btn" data-categoria="parque">Parques</button>
+            <button class="filtro-btn" data-categoria="lago">Lagos</button>
+            <button class="filtro-btn" data-categoria="caminhada">Caminhada</button>
+            <button class="filtro-btn" data-categoria="restaurante">Restaurantes</button>
+            <button class="filtro-btn" data-categoria="bar">Bares</button>
+            <button class="filtro-btn" data-categoria="musica">Música</button>
+            <button class="filtro-btn" data-categoria="cafe">Cafés</button>
+            <button class="filtro-btn" data-categoria="sorveteria">Sorveterias</button>
+            <button class="filtro-btn" data-categoria="pizzaria">Pizzarias</button>
+            <button class="filtro-btn" data-categoria="cultural">Cultural</button>
+        </div>
+
+        <div id="mapa-pins"></div>
+
+        <div id="resultados">
+            <div class="card" data-nome="Lago Municipal Diva Paim Barth" data-pagina="lugares/lago/lago.html"
+                data-categoria="parque,lago,caminhada" data-lat="-24.7244" data-lng="-53.7449">
+                <div class="container-imagem">
+                    <img src="images/lago3.jpeg" alt="Lago Municipal">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag parque">Parque</span>
+                        <span class="categoria-tag lago">Lago</span>
+                        <span class="categoria-tag caminhada">Caminhada</span>
+                    </div>
+                    <h2>Lago Municipal Diva Paim Barth</h2>
+                    <p>Um dos pontos turísticos mais conhecidos de Toledo, ideal para caminhadas e lazer.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Parque do Povo Luiz Cláudio Hoffmann"
+                data-pagina="lugares/lago-novo/lago-novo.html" data-categoria="parque,lago,caminhada"
+                data-lat="-24.7155" data-lng="-53.7478">
+                <div class="container-imagem">
+                    <img src="images/lagonovo2.jpg" alt="Parque do Povo">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag parque">Parque</span>
+                        <span class="categoria-tag lago">Lago</span>
+                        <span class="categoria-tag caminhada">Caminhada</span>
+                    </div>
+                    <h2>Parque do Povo Luiz Cláudio Hoffmann</h2>
+                    <p>Amplo espaço de lazer, convivência, caminhada, esporte e descanso ao ar livre.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Teatro Municipal" data-pagina="teatro_municipal.html"
+                data-categoria="cultural" data-lat="-24.7197" data-lng="-53.7443">
+                <div class="container-imagem">
+                    <img src="images/teatro2.jpeg" alt="Teatro Municipal">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag cultural">Cultural</span>
+                    </div>
+                    <h2>Teatro Municipal</h2>
+                    <p>Centro cultural com apresentações, eventos e festivais durante todo o ano.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Restaurante Filezão" data-pagina="filezao.html"
+                data-categoria="restaurante" data-lat="-24.7230" data-lng="-53.7455">
+                <div class="container-imagem">
+                    <img src="images/filezao.jpg" alt="Restaurante Filezão">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                    </div>
+                    <h2>Restaurante Filezão</h2>
+                    <p>Restaurante tradicional com pratos típicos e excelente atendimento.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Restaurante Peixe Frito Pantanal"
+                data-pagina="lugares/pantanal/pantanal.html" data-categoria="restaurante"
+                data-lat="-24.7444324" data-lng="-53.741043">
+                <div class="container-imagem">
+                    <img src="images/Pantanal01.jpg" alt="Restaurante Peixe Frito Pantanal">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                    </div>
+                    <h2>Restaurante Peixe Frito Pantanal</h2>
+                    <p>Um dos restaurantes mais comentados em Toledo: ambiente amplo, especializado em peixes e frutos
+                        do mar, ótimo para famílias ou encontros maiores.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Jhonys Gastronomia Restaurante" data-pagina="lugares/jhonys/jhonys.html"
+                data-categoria="restaurante" data-lat="-24.7207523" data-lng="-53.7440926">
+                <div class="container-imagem">
+                    <img src="images/jhonys01.jpg" alt="Jhonys Gastronomia Restaurante">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                    </div>
+                    <h2>Jhonys Gastronomia Restaurante</h2>
+                    <p>Restaurante bem avaliado, localizado dentro do Shopping Panambi, o que facilita para quem está
+                        na cidade ou quer algo bem organizado.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="La Mafia Trattoria Toledo" data-pagina="lugares/la-mafia/mafia.html"
+                data-categoria="restaurante" data-lat="-24.7343883" data-lng="-53.7589179">
+                <div class="container-imagem">
+                    <img src="images/lamafia01.png" alt="La Mafia Trattoria Toledo">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                    </div>
+                    <h2>La Mafia Trattoria Toledo</h2>
+                    <p>Especializado em culinária italiana. Ótima opção para jantar mais descontraído, com massas,
+                        vinhos ou pratos especiais.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Água Doce Cachaçaria Toledo"
+                data-pagina="lugares/agua-doce/agua-doce.html" data-categoria="bar,restaurante"
+                data-lat="-24.727388" data-lng="-53.7461708">
+                <div class="container-imagem">
+                    <img src="images/agua-doce.png" alt="Água Doce Cachaçaria Toledo">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag bar">Bar</span>
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                    </div>
+                    <h2>Água Doce Cachaçaria Toledo</h2>
+                    <p>Ambiente descontraído, ideal para happy-hour ou almoço mais informal. Mistura de pratos e
+                        bebidas brasileiras.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Boteco do Mosquito" data-pagina="lugares/mosquito/mosquito.html"
+                data-categoria="bar,musica" data-lat="-24.7238898" data-lng="-53.7563652">
+                <div class="container-imagem">
+                    <img src="images/mosquito02.png" alt="Boteco do Mosquito">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag bar">Bar</span>
+                        <span class="categoria-tag musica">Música</span>
+                    </div>
+                    <h2>Boteco do Mosquito</h2>
+                    <p>Muito popular entre moradores: ambiente de boteco, bom para sair com amigos, descontraído.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Polaroid Bistrô" data-pagina="lugares/polaroid-bistro/polaroid.html"
+                data-categoria="restaurante,cafe" data-lat="-24.7311306" data-lng="-53.745425">
+                <div class="container-imagem">
+                    <img src="images/polaroidbistro01.png" alt="Polaroid Bistrô">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                        <span class="categoria-tag cafe">Café</span>
+                    </div>
+                    <h2>Polaroid Bistrô</h2>
+                    <p>Bistrô no centro de Toledo, opção mais refinada para jantar ou encontro especial.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Aurelius Gastrô & Beer" data-pagina="lugares/aurelius/aurelius.html"
+                data-categoria="restaurante,bar" data-lat="-24.7208157" data-lng="-53.7434549">
+                <div class="container-imagem">
+                    <img src="images/aurelius01.png" alt="Aurelius Gastrô & Beer">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag restaurante">Restaurante</span>
+                        <span class="categoria-tag bar">Bar</span>
+                    </div>
+                    <h2>Aurelius Gastrô & Beer</h2>
+                    <p>Combina boa gastronomia com cervejas especiais, ideal para quem gosta de sair para jantar e
+                        beber algo diferente.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="A Taberna Colonial" data-pagina="lugares/taberna-colonial/taberna.html"
+                data-categoria="bar,musica" data-lat="-24.7230303" data-lng="-53.7418356">
+                <div class="container-imagem">
+                    <img src="images/ataberna01.png" alt="A Taberna Colonial">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag bar">Bar</span>
+                        <span class="categoria-tag musica">Música</span>
+                    </div>
+                    <h2>A Taberna Colonial</h2>
+                    <p>Bar com ambiente mais intimista ou alternativo. Boa pedida para noites com música ou encontro
+                        tranquilo.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Irish Pub Toledo" data-pagina="lugares/irish-pub/irish-pub.html"
+                data-categoria="bar,musica" data-lat="-24.734435" data-lng="-53.7507425">
+                <div class="container-imagem">
+                    <img src="images/irish01.png" alt="Irish Pub Toledo">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag bar">Bar</span>
+                        <span class="categoria-tag musica">Música</span>
+                    </div>
+                    <h2>Irish Pub Toledo</h2>
+                    <p>Pub no estilo irlandês para quem quer algo descontraído, com ambiente de bar internacional.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Queens Pub Pizzaria e Choperia" data-pagina="lugares/queens/queens.html"
+                data-categoria="bar,pizzaria,musica" data-lat="-24.7198289" data-lng="-53.7488763">
+                <div class="container-imagem">
+                    <img src="images/queens01.png" alt="Queens Pub Pizzaria e Choperia">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag bar">Bar</span>
+                        <span class="categoria-tag pizzaria">Pizzaria</span>
+                        <span class="categoria-tag musica">Música</span>
+                    </div>
+                    <h2>Queens Pub Pizzaria e Choperia</h2>
+                    <p>Combina pizzas com chopps, ótimo para grupos de amigos ou famílias — ambiente informal.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Sapezal Beer Bar e Conveniência"
+                data-pagina="lugares/sapezal/sapezal.html" data-categoria="bar"
+                data-lat="-24.7242" data-lng="-53.7462">
+                <div class="container-imagem">
+                    <img src="images/sapezalbeer01.png" alt="Sapezal Beer Bar e Conveniência">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag bar">Bar</span>
+                    </div>
+                    <h2>Sapezal Beer Bar e Conveniência</h2>
+                    <p>Bar especializado em cervejas com um ambiente mais informal, bom para sair à noite.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Dom Karamello" data-pagina="lugares/domkaramello/domkaramello.html"
+                data-categoria="cafe" data-lat="-24.7208" data-lng="-53.7438">
+                <div class="container-imagem">
+                    <img src="images/karamelo01.png" alt="Dom Karamello">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag cafe">Café</span>
+                    </div>
+                    <h2>Dom Karamello</h2>
+                    <p>Uma cafeteria/confeitaria com ótimo atendimento, ambiente agradável e bons doces.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Go Coffee – Toledo" data-pagina="lugares/gocoffee/gocoffee.html"
+                data-categoria="cafe" data-lat="-24.7225" data-lng="-53.7443">
+                <div class="container-imagem">
+                    <img src="images/goocoffe01.png" alt="Go Coffee – Toledo">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag cafe">Café</span>
+                    </div>
+                    <h2>Go Coffee – Toledo</h2>
+                    <p>Café mais moderno, para pessoas que querem um ambiente mais descontraído.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+
+            <div class="card" data-nome="Milky Moo Toledo" data-pagina="lugares/milkymoo/milkymoo.html"
+                data-categoria="sorveteria" data-lat="-24.7232" data-lng="-53.7448">
+                <div class="container-imagem">
+                    <img src="images/milkmoo01.png" alt="Milky Moo Toledo">
+                </div>
+                <div class="conteudo-card">
+                    <div class="categorias-card">
+                        <span class="categoria-tag sorveteria">Sorveteria</span>
+                    </div>
+                    <h2>Milky Moo Toledo</h2>
+                    <p>Uma sorveteria bastante elogiada, excelente para sobremesa ou passeio leve.</p>
+                    <button class="btn-ver-mapa">Ver no mapa</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="pesquisa.js"></script>
+</body>
+
+</html>

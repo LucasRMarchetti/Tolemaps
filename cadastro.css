@@ -1,0 +1,428 @@
+.bai-jamjuree-regular {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 400;
+}
+
+.bai-jamjuree-medium {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 500;
+}
+
+.bai-jamjuree-semibold {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 600;
+}
+
+.bai-jamjuree-bold {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 700;
+}
+
+#conteudo {
+    margin-left: 56px;
+    padding: 2vh 2vw;
+    min-height: 100vh;
+    background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-autenticacao {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(109, 121, 147, 0.12);
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    min-width: 300px;
+    margin: 2vh auto;
+}
+
+.cabecalho-autenticacao {
+    background: #6D7993;
+    color: #ffffff;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+
+.cabecalho-autenticacao h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.cabecalho-autenticacao p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    opacity: 0.9;
+    margin: 0;
+    font-weight: 400;
+}
+
+.abas-autenticacao {
+    display: flex;
+    background: #F8F8F8;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.aba {
+    flex: 1;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    background: none;
+    border: none;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 500;
+    color: #6D7993;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aba.active {
+    color: #8AC53F;
+    background: #ffffff;
+}
+
+.aba.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #8AC53F;
+}
+
+.aba:hover {
+    color: #8AC53F;
+    background: #ffffff;
+}
+
+.conteudo-autenticacao {
+    padding: 2rem 1.5rem;
+}
+
+.formulario-autenticacao {
+    display: none;
+}
+
+.formulario-autenticacao.active {
+    display: block;
+    animation: aparecerSubindo 0.4s ease;
+}
+
+@keyframes aparecerSubindo {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grupo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.rotulo-formulario {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #6D7993;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.entrada-formulario {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    transition: all 0.3s ease;
+    background: #ffffff;
+    color: #2D3748;
+    box-sizing: border-box;
+}
+
+.entrada-formulario:focus {
+    outline: none;
+    border-color: #8AC53F;
+    box-shadow: 0 0 0 3px rgba(138, 197, 63, 0.1);
+}
+
+.entrada-formulario::placeholder {
+    color: #A0AEC0;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.entrada-selecao {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236D7993'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+.container-senha {
+    position: relative;
+    width: 100%;
+}
+
+.alternar-senha {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6D7993;
+    cursor: pointer;
+    padding: 0.3rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.alternar-senha:hover {
+    color: #8AC53F;
+}
+
+.alternar-senha svg {
+    width: 18px;
+    height: 18px;
+}
+
+.botao {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-principal {
+    background: #8AC53F;
+    color: #ffffff;
+}
+
+.botao-principal:hover {
+    background: #7AB336;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 197, 63, 0.3);
+}
+
+.botao-principal:active {
+    transform: translateY(0);
+}
+
+.mensagem {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    text-align: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+.mensagem.erro {
+    background: rgba(229, 62, 62, 0.08);
+    color: #E53E3E;
+    border-color: rgba(229, 62, 62, 0.2);
+}
+
+.mensagem.sucesso {
+    background: rgba(56, 161, 105, 0.08);
+    color: #38A169;
+    border-color: rgba(56, 161, 105, 0.2);
+}
+
+.aviso {
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    color: #E53E3E;
+    margin-top: 0.4rem;
+    display: block;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    #conteudo {
+        margin-left: 56px;
+        padding: 2vh 3vw;
+    }
+}
+
+/* Tablets Pequenos e Mobile */
+@media (max-width: 900px) {
+    #conteudo {
+        margin-left: 0;
+        padding: 12vh 1rem 1rem 1rem;
+    }
+
+    .container-autenticacao {
+        margin: 1rem auto;
+        border-radius: 10px;
+        max-width: 400px;
+    }
+
+    .cabecalho-autenticacao {
+        padding: 2rem 1.2rem;
+    }
+
+    .conteudo-autenticacao {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .aba {
+        padding: 0.8rem 0.3rem;
+        min-height: 45px;
+    }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 480px) {
+    #conteudo {
+        padding: 10vh 0.8rem 0.8rem 0.8rem;
+    }
+
+    .container-autenticacao {
+        margin: 0.5rem auto;
+        border-radius: 8px;
+    }
+
+    .cabecalho-autenticacao {
+        padding: 1.5rem 1rem;
+    }
+
+    .cabecalho-autenticacao h1 {
+        font-size: 1.4rem;
+    }
+
+    .conteudo-autenticacao {
+        padding: 1.2rem 1rem;
+    }
+
+    .entrada-formulario {
+        padding: 0.7rem 0.8rem;
+        font-size: 16px;
+        /* Evita zoom no iOS */
+    }
+
+    .botao {
+        padding: 0.8rem 1rem;
+        min-height: 44px;
+        /* Tamanho mínimo para touch */
+    }
+
+    .alternar-senha {
+        right: 0.6rem;
+        width: 28px;
+        height: 28px;
+    }
+
+    .alternar-senha svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .grupo-formulario {
+        margin-bottom: 1.2rem;
+    }
+}
+
+/* Mobile Muito Pequeno */
+@media (max-width: 360px) {
+    #conteudo {
+        padding: 8vh 0.5rem 0.5rem 0.5rem;
+    }
+
+    .container-autenticacao {
+        margin: 0.3rem auto;
+    }
+
+    .cabecalho-autenticacao {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .conteudo-autenticacao {
+        padding: 1rem 0.8rem;
+    }
+
+    .entrada-formulario {
+        padding: 0.6rem 0.7rem;
+    }
+
+    .botao {
+        padding: 0.7rem 0.8rem;
+    }
+}
+
+/* Ajuste para telas muito altas */
+@media (min-height: 800px) {
+    #conteudo {
+        padding: 4vh 2vw;
+    }
+
+    .container-autenticacao {
+        margin: 4vh auto;
+    }
+}
+
+/* Ajuste para quando o teclado virtual aparece no mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    #conteudo {
+        padding: 1rem 0.5rem;
+        align-items: flex-start;
+    }
+
+    .container-autenticacao {
+        margin: 0.5rem auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .cabecalho-autenticacao {
+        padding: 1rem;
+    }
+
+    .conteudo-autenticacao {
+        padding: 1rem;
+    }
+
+    .grupo-formulario {
+        margin-bottom: 0.8rem;
+    }
+}

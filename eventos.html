@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | Tolemaps</title>
+    <link rel="stylesheet" href="eventos.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <nav id="categorias">
+        <div id="nav-logo">
+            <img id="logo-img" src="icone_dosite.ico" alt="ToleMaps">
+        </div>
+        <div id="nav-links">
+            <a class="nav-item" href="pesquisa.html" data-tooltip="Pesquisa">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </a>
+            <a class="nav-item" href="mapa.html" data-tooltip="Mapa">
+                <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+            </a>
+            <a class="nav-item" href="cultura.html" data-tooltip="Cultura">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17h2v-4.5l1 .55V17c0 1.1 1.8 2 4 2s4-.9 4-2v-3.95l3-1.65V17h2V11.18L23 9 12 3zm4 12.18c-.63.47-1.86.82-4 .82-2.14 0-3.37-.35-4-.82v-2.67l4 2.2 4-2.2v2.67z"/></svg>
+            </a>
+            <a class="nav-item active" href="eventos.html" data-tooltip="Eventos">
+                <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+            </a>
+            <a class="nav-item" href="guia.html" data-tooltip="Guia Turístico">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </a>
+            <a class="nav-item" href="sobrenos.html" data-tooltip="Sobre Nós">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </a>
+            <a class="nav-item" href="referencias.html" data-tooltip="Referências">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            </a>
+        </div>
+        <div id="nav-bottom">
+            <a class="nav-item nav-bottom-item" href="cadastro.html" data-tooltip="Perfil">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </a>
+            <a class="nav-item nav-bottom-item" href="paginaIni.html" data-tooltip="Início">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <main id="conteudo">
+        <h1>EVENTOS</h1>
+        <p id="subtitulo-pagina">Toledo e região oeste do Paraná</p>
+
+        <section id="destaques">
+            <h2 class="secao-titulo">Eventos em Destaque</h2>
+            <div id="destaques-grid">
+                <div class="card-destaque">
+                    <div class="destaque-img destaque-porco"></div>
+                    <div class="destaque-info">
+                        <span class="evento-tag gastronomia">Gastronomia</span>
+                        <h3>Festa do Porco no Rolete</h3>
+                        <p>O maior evento gastronômico de Toledo, com mais de 46 anos de tradição. Atrai visitantes de todo o Brasil com pratos típicos, música e cultura local.</p>
+                        <div class="evento-meta">
+                            <span class="meta-item">📅 Setembro</span>
+                            <span class="meta-item">📍 Toledo - PR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-destaque">
+                    <div class="destaque-img destaque-teatro"></div>
+                    <div class="destaque-info">
+                        <span class="evento-tag cultural">Cultural</span>
+                        <h3>Meia Maratona de Toledo</h3>
+                        <p>25ª Edição da Meia maratona de Toledo - Sicredi, promovida pelo Rotary Club de Toledo.</p>
+                        <div class="evento-meta">
+                            <span class="meta-item">📅 Outubro</span>
+                            <span class="meta-item">📍 Parque Ecológico Diva Paim Barth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-destaque">
+                    <div class="destaque-img destaque-expo"></div>
+                    <div class="destaque-info">
+                        <span class="evento-tag agro">Agronegócio</span>
+                        <h3>ExpoToledo</h3>
+                        <p>A maior feira agropecuária do oeste do Paraná, reunindo expositores, shows nacionais e atrações para toda a família no Centro de Eventos Ismael Sperafico.</p>
+                        <div class="evento-meta">
+                            <span class="meta-item">📅 Abril</span>
+                            <span class="meta-item">📍 Centro de Eventos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="layout-principal">
+            <section id="secao-lista">
+                <h2 class="secao-titulo">Próximos Eventos</h2>
+                <div id="filtros-mes">
+                    <button class="mes-btn ativo" data-mes="todos">Todos</button>
+                    <button class="mes-btn" data-mes="1">Jan</button>
+                    <button class="mes-btn" data-mes="2">Fev</button>
+                    <button class="mes-btn" data-mes="3">Mar</button>
+                    <button class="mes-btn" data-mes="4">Abr</button>
+                    <button class="mes-btn" data-mes="5">Mai</button>
+                    <button class="mes-btn" data-mes="6">Jun</button>
+                    <button class="mes-btn" data-mes="7">Jul</button>
+                    <button class="mes-btn" data-mes="8">Ago</button>
+                    <button class="mes-btn" data-mes="9">Set</button>
+                    <button class="mes-btn" data-mes="10">Out</button>
+                    <button class="mes-btn" data-mes="11">Nov</button>
+                    <button class="mes-btn" data-mes="12">Dez</button>
+                </div>
+                <div id="lista-eventos">
+                    <p id="msg-carregando">Carregando eventos...</p>
+                </div>
+            </section>
+
+            <aside id="secao-calendario">
+                <h2 class="secao-titulo">Calendário</h2>
+                <div id="calendario">
+                    <div id="cal-header">
+                        <button id="cal-prev">&#8249;</button>
+                        <span id="cal-titulo"></span>
+                        <button id="cal-next">&#8250;</button>
+                    </div>
+                    <div id="cal-dias-semana">
+                        <span>Dom</span><span>Seg</span><span>Ter</span>
+                        <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                    </div>
+                    <div id="cal-grid"></div>
+                </div>
+                <div id="cal-legenda">
+                    <span class="legenda-dot tem-evento"></span> Com evento
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="eventos.js"></script>
+</body>
+</html>

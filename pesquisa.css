@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    background-color: #F8F8F8;
+    font-family: "Bai Jamjuree", sans-serif;
+    color: #333;
+}
+
+#conteudo {
+    margin-left: 56px;
+    padding: 4vh 5vw;
+    background-color: #F8F8F8;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #8AC53F;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    text-align: center;
+    margin-bottom: 4vh;
+    letter-spacing: -0.5px;
+}
+
+#barraPesquisa {
+    display: block;
+    width: 60%;
+    margin: 0 auto 20px auto;
+    padding: 12px 18px;
+    font-size: 1.2vw;
+    border: 2px solid #C09F80;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#barraPesquisa:focus {
+    border-color: #8AC53F;
+}
+
+.filtros-categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.filtro-btn {
+    background: #fff;
+    border: 2px solid #6D7993;
+    color: #6D7993;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filtro-btn:hover {
+    background: #6D7993;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filtro-btn.ativo {
+    background: #8AC53F;
+    border-color: #8AC53F;
+    color: white;
+}
+
+#mapa-pins {
+    width: 100%;
+    height: 45vh;
+    border-radius: 12px;
+    border: 3px solid #C09F80;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    margin-bottom: 4vh;
+}
+
+#resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    background: #fff;
+    padding: 2vh 2vw;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.container-imagem {
+    flex-shrink: 0;
+}
+
+.container-imagem img {
+    width: 25vw;
+    height: 28vh;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.sem-foto {
+    width: 25vw;
+    height: 28vh;
+    border-radius: 10px;
+    background: #EDF2F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    color: #aaa;
+    flex-shrink: 0;
+}
+
+.conteudo-card {
+    flex: 1;
+}
+
+.conteudo-card h2 {
+    color: #6D7993;
+    margin-bottom: 0.5vh;
+    font-size: 1.4rem;
+}
+
+.conteudo-card p {
+    color: #444;
+    font-size: 1.1vw;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.categorias-card {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.categoria-tag {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.categoria-tag.parque      { background: #48BB78; }
+.categoria-tag.lago        { background: #4299E1; }
+.categoria-tag.caminhada   { background: #38B2AC; }
+.categoria-tag.restaurante { background: #E53E3E; }
+.categoria-tag.bar         { background: #D69E2E; }
+.categoria-tag.musica      { background: #9F7AEA; }
+.categoria-tag.cafe        { background: #ED8936; }
+.categoria-tag.sorveteria  { background: #B83280; }
+.categoria-tag.pizzaria    { background: #2C7A7B; }
+.categoria-tag.cultural    { background: #4A5568; }
+
+.btn-ver-mapa {
+    margin-top: 1.2vh;
+    background: transparent;
+    border: 2px solid #6D7993;
+    color: #6D7993;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.btn-ver-mapa:hover {
+    background: #6D7993;
+    color: white;
+}
+
+@media (max-width: 900px) {
+    #conteudo {
+        margin-left: 0;
+        padding: 12vh 1rem 2rem 1rem;
+    }
+
+    h1 { font-size: 6vw; }
+
+    #barraPesquisa {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    #mapa-pins { height: 35vh; }
+
+    .filtros-categorias { gap: 8px; }
+
+    .filtro-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .container-imagem img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .sem-foto {
+        width: 100%;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+
+    .conteudo-card h2 { font-size: 1.2rem; }
+    .conteudo-card p  { font-size: 1rem; }
+
+    .categorias-card { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 8vw; }
+
+    #barraPesquisa {
+        width: 90%;
+        padding: 10px;
+    }
+
+    #mapa-pins { height: 30vh; }
+
+    .filtros-categorias { gap: 5px; }
+
+    .filtro-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .card { padding: 1.5rem; }
+
+    .container-imagem img { height: 150px; }
+
+    .categoria-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+}

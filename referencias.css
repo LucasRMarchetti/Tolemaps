@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Bai Jamjuree", sans-serif;
+    background-color: #F8F8F8;
+    color: #333;
+    line-height: 1.6;
+}
+
+#conteudo {
+    margin-left: 56px;
+    padding: 4vh 5vw;
+    min-height: 100vh;
+}
+
+#conteudo h1 {
+    color: #8AC53F;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    text-align: center;
+    margin-bottom: 4vh;
+    letter-spacing: -0.5px;
+}
+
+.referencia-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.referencia-card h2 {
+    color: #2a3040;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-left: 3px solid #8AC53F;
+    padding-left: 10px;
+}
+
+.referencia-card #textosref {
+    padding-left: 20px;
+}
+
+.referencia-card li {
+    margin: 8px 0;
+}
+
+.referencia-card a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.referencia-card a:hover {
+    color: #8AC53F;
+}
+
+@media (max-width: 900px) {
+    #conteudo {
+        margin-left: 0;
+        padding: 12vh 1.5rem 2rem;
+    }
+
+    #conteudo h1 { font-size: 6vw; }
+} 
